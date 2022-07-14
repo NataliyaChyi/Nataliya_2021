@@ -32,7 +32,7 @@ def blog_detail(request, pk):
 
 
 def blog_category(request, category):
-    post = Post.objects.filter(
+    posts = Post.objects.filter(
         categories__name__contains=category
     ).order_by('-created_on')
     context = {
